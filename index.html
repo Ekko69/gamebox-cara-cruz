@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | gamebox-caracruz</title>
+    <title>Ayos | Cara Cruz</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -43,19 +43,21 @@
                 UnityInAppBrowser.sendMessageFromJS(message);
             }
         }
-        function ExitGame(val) {
+        function ExitGame(val, token) {
             if (urlParams.has('lobby')) {
-                var lob = urlParams.get('lobby');
-                window.location.href = lob;
+                var lob = urlParams.get('lobby') + '/?' + urlParams.get('partner_id');
+                window.location.href = lob + '&token=' + token;
             } else {
                 if (isIOS()) {
                     try {
+                        alert('[EXIT][IOS] Exiting with code: ' + val);
                         window.location.href = "ayos://Exit?code=" + val;
                     } catch (err) {
-                        console.log('[EXIT][IOS] Cannot exit: ' + err.message);
+                        alert('[EXIT][IOS] Cannot exit: ' + err.message);
                     }
                 } else if (isAndroid()) {
                     try {
+                        alert('[EXIT][ANDROID] Exiting with code: ' + val);
                         sendMessageToUnity("Exit=" + val);
                     } catch (err) {
                         console.log('[EXIT][ANDROID] Cannot exit: ' + err.message);
@@ -101,8 +103,8 @@
         frameworkUrl: buildUrl + "/gamebox-cara-cruz.framework.js",
         codeUrl: buildUrl + "/gamebox-cara-cruz.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "MultisysCorporation",
-        productName: "gamebox-caracruz",
+        companyName: "Multisys Technologies Corporation",
+        productName: "Cara Cruz",
         productVersion: "0.1",
         //showBanner: unityShowBanner,
       };
