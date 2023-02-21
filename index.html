@@ -167,12 +167,12 @@
             function handleVisibilityChange(hiddenState, reason) {
                 if (hiddenState) {
                     if (isPageVisible) {
-                        console.log('visibility: hidden', reason);
+                        //console.log('visibility: hidden', reason);
                         isPageVisible = false;
                         unityInstance.SendMessage("[Bridge]", "TogglePause", "PAUSED");
                     }
                 } else {
-                    console.log('visibility: restored', reason);
+                    //console.log('visibility: restored', reason);
                     isPageVisible = true;
                     unityInstance.SendMessage("[Bridge]", "TogglePause", "UNPAUSED");
                 }
