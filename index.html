@@ -23,7 +23,12 @@
         <div id="unity-build-title">UnityWebGL</div>
       </div>
     </div>
-    <script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
       // Your web app's Firebase configuration
       const firebaseConfig = {
         apiKey: "AIzaSyDndTG92xCi69d2c5KrA9aklolJiBc3Rb4",
@@ -34,6 +39,9 @@
         messagingSenderId: "449530808115",
         appId: "1:449530808115:web:048b07dc87fb741843a046"
       };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
     </script>
     <script>
       var container = document.querySelector("#unity-container");
