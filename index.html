@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | SPORTBASE</title>
+    <title>Unity WebGL Player | YourProduct</title>
 
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -35,7 +35,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">SPORTBASE</div>        
+        <div id="unity-build-title">YourProduct</div>        
       </div>
 
       <div class="text-center">
@@ -45,16 +45,17 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/sportbase.loader.js";
+      var loaderUrl = buildUrl + "/YourProductWebGL.loader.js";
       var config = {
-        dataUrl: buildUrl + "/sportbase.data",
-        frameworkUrl: buildUrl + "/sportbase.framework.js",
-        codeUrl: buildUrl + "/sportbase.wasm",
+        dataUrl: buildUrl + "/YourProductWebGL.data",
+        frameworkUrl: buildUrl + "/YourProductWebGL.framework.js",
+        codeUrl: buildUrl + "/YourProductWebGL.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "MULUPLOT",
-        productName: "Sportbase",
+        companyName: "YourCompany",
+        productName: "YourProductName",
         productVersion: "1.0",
       };
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -119,13 +120,14 @@
   <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyCnA5tH07xm_VGUuEY2K-sMr1igIyY887c",
-    authDomain: "mulu-plot.firebaseapp.com",
-    projectId: "mulu-plot",
-    storageBucket: "mulu-plot.appspot.com",
-    messagingSenderId: "391314006481",
-    appId: "1:391314006481:web:7fdd80fa4ba3506ba180f0",
-    measurementId: "G-TBXXELG0SJ"
+    apiKey: "your apiKey",
+    authDomain: "your authDomain",
+    databaseURL: "your databaseURL",
+    projectId: "your projectId",
+    storageBucket: "your storageBucket",
+    messagingSenderId: "your messagingSenderId",
+    appId: "your appId",
+    measurementId: "your measurementId"
   };
 
   // Initialize Firebase and features
