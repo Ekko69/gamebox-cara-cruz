@@ -30,11 +30,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/MultiLobby.loader.js";
+      var loaderUrl = buildUrl + "/gamebox-cara-cruz.loader.js";
       var config = {
-        dataUrl: buildUrl + "/MultiLobby.data",
-        frameworkUrl: buildUrl + "/MultiLobby.framework.js",
-        codeUrl: buildUrl + "/MultiLobby.wasm",
+        dataUrl: buildUrl + "/gamebox-cara-cruz.data",
+        frameworkUrl: buildUrl + "/gamebox-cara-cruz.framework.js",
+        codeUrl: buildUrl + "/gamebox-cara-cruz.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "YourCompany",
         productName: "YourProductName",
@@ -56,17 +56,21 @@
       // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "450px";
+        canvas.style.height = "900px";
       }
       loadingBar.style.display = "block";
 
